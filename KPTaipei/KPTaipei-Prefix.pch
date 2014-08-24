@@ -1,0 +1,61 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+#define system_version [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+#define initKey @"init.key"
+#define os_version [[[UIDevice currentDevice] systemVersion] doubleValue]
+
+#define systemFont @"HelveticaNeue-Light"
+#define systemFontBold @"HelveticaNeue-Bold"
+
+/*!
+ KP API define
+ */
+#define kp_apiKey @"kp53f9fbf38d5267.94719689"
+/*!
+ 文章類別查詢
+ */
+#define kp_categoryUrl @"http://api.kptaipei.tw/v1/category/?accessToken="kp_apiKey
+/*!
+ 類別內容查詢
+ */
+#define kp_categoryListUrl @"http://api.kptaipei.tw/v1/category/%@?accessToken="kp_apiKey
+/*!
+ 相簿清單查詢
+ */
+#define kp_albumListUrl @"http://api.kptaipei.tw/v1/albums/?accessToken="kp_apiKey
+/*!
+ 相簿照片查詢
+ */
+#define kp_albumUrl @"http://api.kptaipei.tw/v1/albums/%@?accessToken="kp_apiKey
+/*!
+ 影片播放清單
+ */
+#define kp_videoListUrl @"http://api.kptaipei.tw/v1/videos/?accessToken="kp_apiKey
+/*!
+ 影片說明查詢
+ */
+#define kp_videoUrl @"http://api.kptaipei.tw/v1/videos/%@?accessToken="kp_apiKey
+/*!
+ 台北調音樂類別查詢
+ */
+#define kp_musicCategoryUrl @"http://api.kptaipei.tw/v1/musics/?accessToken="kp_apiKey
+/*!
+ 台北調音樂類別清單
+ */
+#define kp_musicListUrl @"http://api.kptaipei.tw/v1/musics/%@?accessToken="kp_apiKey
